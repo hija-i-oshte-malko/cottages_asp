@@ -1,0 +1,58 @@
+﻿* *::before *::after {
+    box-sizing: border-box;
+}
+
+h5 {
+    text-align: center;
+}
+
+body {
+    margin: 0;
+}
+
+.container {
+    font-size: 20px;
+    padding: 10px;
+}
+
+img {
+    padding-left: 40px;
+}
+
+.bio {
+    margin-left: 5px;
+}
+
+.container .content-large,
+.container .content-small {
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+.content-small {
+    border: solid skyblue;
+    border-radius: 30px;
+    width: 200;
+}
+
+h1 {
+    text-align: center;
+}
+
+h5 {
+    align-self: start;
+}
+
+.button {
+    border-radius: 20px;
+    color: white;
+    border-color: black;
+}
+
+.profile-content {
+    font-size: 16px;
+}
+
+    .profile-content .bold {
+        font-weight: bold;
+    }

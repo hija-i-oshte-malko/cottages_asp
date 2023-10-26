@@ -58,6 +58,7 @@ namespace cottages_asp;
 		app.MapRazorPages();
 
 			app.Run();
+			//i lovec sum i ribar sum 
 		}
 	}
 }

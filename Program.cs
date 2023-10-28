@@ -31,7 +31,6 @@ namespace cottages_asp
 				pattern: "{controller=Home}/{action=Index}/{id?}");
 
 			app.Run();
-			//see
 		}
 	}
 }

@@ -1,0 +1,19 @@
+.submit-button {
+    margin-top: 20px;
+    width: 100%;
+}
+
+.spacing-class {
+    margin-bottom: 5px;
+}
+
+.account-register {
+    margin-top: 10px;
+    font-size: 12px;
+    text-align: right;
+}
+
+.forgot-password {
+    font-size: 12px;
+    text-align: right;
+}

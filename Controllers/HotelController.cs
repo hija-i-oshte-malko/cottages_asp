@@ -2,7 +2,7 @@
 
 namespace cottages_asp.Controllers
 {
-    public class HotelPage : Controller
+    public class HotelController : Controller
     {
         public IActionResult Index()
         {

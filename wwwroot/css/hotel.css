@@ -13,14 +13,20 @@
     border-radius: 2px;
     border: solid 4px; 
     background-color:rgb(103, 255, 123);
-  }  
+  }
+  
+  
+  
 .make-me-sticky {
       position: sticky;
       top: 0;
   }
+  
+  
+  
 body {
     background: #ECEBE8;
-}
+  }
   
   
   .content-section{
@@ -49,7 +55,7 @@ body {
   
 .sidebar-item {
     text-align: center;
-   
+    
     h3 {
       background: rgb(103, 255, 123);
       max-width: 100%;

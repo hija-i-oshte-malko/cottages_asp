@@ -1,34 +1,33 @@
 ﻿<div class="container">
 	<div class="text-center">
-		<h1>Create Account</h1>
+		<h1 class="mb-4">Create Account</h1>
 	</div>
-	<div class="row justify-content-center my-5">
+	<div class="row justify-content-center ">
 		<div class="col-lg-6">
 			<form asp-action="Register">
-
-				<input type="name"
+				<input type="text"
 					   name="name"
 					   placeholder="Your Name"
-					   class="spacing-class form-control" />
+					   class="form-control mb-2" />
 
 				<input type="email"
 					   name="email"
 					   placeholder="Your Email"
-					   class="spacing-class form-control" />
+					   class="form-control mb-2" />
 
 				<input type="password"
 					   name="password"
 					   placeholder="Password"
-					   class="spacing-class form-control" />
+					   class="form-control mb-2" />
 
 				<input type="password"
 					   name="repeat-password"
 					   placeholder="Repeat Your Password"
-					   class="form-control" />
-				<button type="button" class="submit-button btn btn-primary btn-block">Sign Up</button>
-				<div class="account-log-in">I agree to the<a href="Login.html">Terms of Service</a></div>
-				<div class="account-log-in">Already have an account? You can log in <a asp-action="Login">here!</a></div>
+					   class="form-control mb-2" />
 
+				<input type="submit" class="btn btn-primary btn-block w-100 mb-1" value="Sign Up" />
+				<div class="text-right fs-12">By signing up you agree to the <a href="#">Terms of Service</a></div>
+				<div class="text-right fs-12">Already have an account? You can log in <a asp-action="Login">here!</a></div>
 			</form>
 		</div>
 	</div>

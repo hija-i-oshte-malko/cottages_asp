@@ -1,0 +1,22 @@
+﻿<div class="container">
+	<div class="row justify-content-center">
+		<div class="col-lg-6">
+			<h1 class="mb-4 text-center">Create Account</h1>
+			<form asp-action="Login">
+				<input type="email"
+					   name="email"
+					   placeholder="Your Email"
+					   class="form-control mb-2" />
+
+				<input type="password"
+					   name="password"
+					   placeholder="Password"
+					   class="form-control mb-2" />
+
+				<input type="submit" class="btn btn-primary w-100 mb-1" value="Sign in" />
+				<div class="text-right fs-12">Don't have an account? You can register <a asp-action="Register">here!</a></div>
+				<div class="text-right fs-12"> <a href="#">Forgot password?</a></div>
+			</form>
+		</div>
+	</div>
+</div>

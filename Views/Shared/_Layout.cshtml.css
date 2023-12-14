@@ -6,28 +6,81 @@ a.navbar-brand {
   text-align: center;
   word-break: break-all;
 }
-
-a {
-  color: #0077cc;
+.ezik {
+    background: #C39103;
 }
-
+.logo-image {
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-top: -6px;
+}
 .btn-primary {
   color: #fff;
   background-color: #1b6ec2;
   border-color: #1861ac;
 }
+.navbar {
+    background-color: #1E7D91 !important;
+    background-image: linear-gradient(45deg, transparent 20%, #00373E 25%, transparent 25%), linear-gradient(-45deg, transparent 20%, #00373E 25%, transparent 25%), linear-gradient(-45deg, transparent 75%, #00373E 80%, transparent 0), radial-gradient(#00373E 2px, transparent 0) !important;
+    background-size: 30px 30px, 30px 30px !important;
+    border-bottom: 2px solid #C39103;
+}
+.container-fluid {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.search input[type="search"] {
+    background-color: #ECEBE8; /* Change this color to your desired input background color */
+    border: none; /* Remove default input border if desired */
+    border-radius: 40px; /* Adjust border-radius if needed */
+    padding: 8px; /* Adjust padding as required */
+    color: #000; /* Input text color */
+}
+.navbar-nav .nav-item .nav-link {
+    color: #ECEBE8 !important; /* Change this color to your desired font color */
+    /* Other necessary styles */
+}
+    .search button {
+    background-color: #ECEBE8; /* Change this color to your desired input background color */
+    border: 3px solid #C39103; /* Remove default input border if desired */
+    border-radius: 40px; /* Adjust border-radius if needed */
+    padding-left: 3px;
+    padding: 8px; /* Adjust padding as required */
+    color: #000; /* Input text color */
+}
+
+.nav-item {
+    background: #005D68 !important;
+    margin-right: 4px;
+}
+
+.nav-link a{
+    color: #ECEBE8 !important;
+}
+
+.search {
+    border: 3px solid #346D2F;
+    margin-right: 10px;
+    background: #ECEBE8;
+    border-radius: 40px;
+    display: flex;
+    align-items: center;
+}
 
 .nav-pills .nav-link.active, .nav-pills .show > .nav-link {
-  color: #fff;
-  background-color: #1b6ec2;
-  border-color: #1861ac;
+    color: #ECEBE8;
+    background-color: #1b6ec2;
+    border-color: #C39103;
 }
 
 .border-top {
   border-top: 1px solid #e5e5e5;
 }
 .border-bottom {
-  border-bottom: 1px solid #e5e5e5;
+    border-bottom: 1px solid #C39103;
 }
 
 .box-shadow {
@@ -38,7 +91,6 @@ button.accept-policy {
   font-size: 1rem;
   line-height: inherit;
 }
-
 .footer {
   position: absolute;
   bottom: 0;

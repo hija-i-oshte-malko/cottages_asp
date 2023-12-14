@@ -1,0 +1,13 @@
+body {
+}
+
+.admin-placement {
+	height: auto;
+}
+
+.box {
+	width: 25%;
+	background-color: green;
+	float: left;
+	position:absolute;
+}

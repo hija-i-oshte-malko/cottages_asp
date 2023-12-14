@@ -1,11 +1,11 @@
-﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 using cottages_asp.Models.Entities;
 
 namespace cotagges_asp.Data
 {
-    public class CottagesDbContext :DbContext
+    public class CottagesDbContext : DbContext
     {
-        public CottagesDbContext(DbContextOptions<CottagesDbContext> options)
+		public CottagesDbContext(DbContextOptions<CottagesDbContext> options)
            : base(options)
         {
         }

@@ -4,11 +4,12 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - cottages_asp</title>
-	<link rel="stylesheet" href="~/css/login.css" asp-append-version="true" />
-	<link rel="stylesheet" href="~/css/register.css" asp-append-version="true" />
-	<link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
-	<link rel="stylesheet" href="~/cottages_asp.styles.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/login.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/register.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/cottages_asp.styles.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 <body>
     <header>
@@ -38,14 +39,41 @@
         </main>
     </div>
 
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2023 - cottages_asp - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-        </div>
-    </footer>
+    
+    
+    <style>
+        .footer {
+            
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            background-color: rgb(62,62,66);
+            color: white;
+            text-align: right;
+            
+        }
+       .greyText{
+           color: rgb(142,142,142)
+       }
+    </style>
+
+    <div class="footer">
+        <p class="greyText">За Нас</p>
+        <p>Условия за ползване</p>
+        <p>Политика за поверителност</p>
+        <center><p class="greyText">Категории</p></center>
+        <center><p>Категория 1</p></center>
+        <center><p>Категория 2</p></center>
+        <center><p>Категория 3</p></center>
+        <img href="https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.stickpng.com%2Fimg%2Fmiscellaneous%2Fshapes%2Fsquare&psig=AOvVaw20O1GVyQe1_iVN61rF9hr-&ust=1702625960220000&source=images&cd=vfe&opi=89978449&ved=0CBAQjRxqFwoTCNiVhY-2joMDFQAAAAAdAAAAABAH" />
+
+        <center><p class="greyText">&copy; 2023 - cottages|Всички права запазени</p></center>
+    </div>
+        
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>

@@ -1,0 +1,51 @@
+﻿@model cottages_asp.Models.DeleteBuidlingViewModel
+<h1>Delete Building</h1>
+@{
+	Layout = "_AdminLayout";
+}
+
+<form method="post" action="Delete" class="mt-5">
+
+
+   <div class="mb-3">​
+
+        <label for="" class="form-label"style="color:darkgray;"><b>Location</b></label>​
+
+        <input type="text" class="form-control" asp-for="Location">​
+
+    </div>​
+     <div class="mb-3">​
+
+        <label for="" class="form-label"style="color:darkgray;"><b>Name</b></label>​
+
+        <input type="text" class="form-control" asp-for="Name">​
+
+    </div>​
+     <div class="mb-3">​
+
+        <label for="" class="form-label"style="color:darkgray;"><b>Description</b></label>​
+
+        <input type="text" class="form-control" asp-for="Description">​
+
+    </div>​
+     <div class="mb-3">​
+
+        <label for="" class="form-label"style="color:darkgray;"><b>Review</b></label>​
+
+        <input type="text" class="form-control" asp-for="Review">​
+
+    </div>​
+
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+
+
+
+
+    <button type"submit" class="btn btn-danger"
+            asp-action="Delete"
+            asp-controller="Building">
+        Delete
+    </button>
+
+</form>​

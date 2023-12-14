@@ -1,0 +1,41 @@
+﻿@model cottages_asp.Models.AddBuildingViewModel
+@{
+	Layout = "_AdminLayout";
+}
+<h1>Add Building</h1>​
+
+<form method="post" action="Add" class="mt-5">​
+
+    <div class="mb-3 text-bg-secondary p-3">​
+
+        <label for="" class="form-label" style="color:darkgray;"><b>Location</b></label>​
+
+        <input type="text" class="form-control" asp-for="Location">​
+
+    </div>​
+     <div class="mb-3 text-bg-secondary p-3">​
+
+        <label for="" class="form-label"style="color:darkgray;"><b>Name</b></label>​
+
+        <input type="text" class="form-control" asp-for="Name">​
+
+    </div>​
+     <div class="mb-3 text-bg-secondary p-3">​
+
+        <label for="" class="form-label"style="color:darkgray;"><b>Description</b></label>​
+
+        <input type="text" class="form-control" asp-for="Description">​
+
+    </div>​
+     <div class="mb-3 text-bg-secondary p-3">​
+
+        <label for="" class="form-label">style="color:darkgray;"><b>Review</b></label>​
+
+        <input type="text" class="form-control" asp-for="Review">​
+
+    </div>​
+
+​
+    <button type="submit" class="btn btn-primary">Submit</button>​
+
+</form>​

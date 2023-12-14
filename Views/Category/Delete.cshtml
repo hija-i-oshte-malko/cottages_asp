@@ -1,0 +1,40 @@
+﻿@model cottages_asp.Models.DeleteCategoryViewModel
+<h1>Delete Category</h1>
+
+<form method="post" action="Delete" class="mt-5">
+
+
+  
+     <div class="mb-3">​
+
+        <label for="" class="form-label">CategoryId</label>​
+
+        <input type="text" class="form-control" asp-for="CategoryId">​
+
+    </div>​
+
+     <div class="mb-3">​
+
+        <label for="" class="form-label">Name</label>​
+
+        <input type="text" class="form-control" asp-for="Name">​
+
+    </div>​
+     <div class="mb-3">​
+
+        <label for="" class="form-label">Icon</label>​
+
+        <input type="text" class="form-control" asp-for="Icon">​
+
+    </div>​
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+
+
+    <button type"submit" class="btn btn-danger"
+            asp-action="Delete"
+            asp-controller="Category">
+        Delete
+    </button>
+
+</form>​

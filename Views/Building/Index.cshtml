@@ -1,0 +1,38 @@
+﻿@model List<cottages_asp.Models.Entities.Building>;
+@{
+	Layout = "_AdminLayout";
+}
+
+<span id="building" style="color:darkgray;" >
+   <h2>Building</h2>​
+</span>
+
+<table class="table-hover">
+    <thead>
+       <tr style="color:darkgray;">
+           
+            <th colspan="4">Id</th>
+            <th  colspan="6" style="padding-left:20px;">Location</th>
+            <th  colspan="8" style="padding-left:20px;">Name</th>
+            <th  colspan="9" style="padding-left:20px;">Description</th>
+            <th  colspan="10" style="padding-left:20px;">Review</th>
+
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var building in Model)
+        {
+            <tr class="border-bottom"; style="color:darkgray;border-spacing:10px;">
+
+                <td colspan="4">@building.BuildingId</td>
+                <td colspan="6" style="padding-left:20px;">@building.Location</td>
+                <td colspan="8" style="padding-left:20px;">@building.Name</td>
+                <td colspan="9" style="padding-left:20px;">@building.Description</td>
+                <td colspan="10" style="padding-left:20px;">@building.Review</td>
+                <td><a asp-controller="Building" asp-action="Update" asp-route-id=@building.BuildingId> Update </a></td>
+                <td><a asp-controller="Building" asp-action="Delete" asp-route-id=@building.BuildingId> Delete </a></td>
+            </tr>
+        }
+	</tbody>
+</table>

@@ -1,0 +1,28 @@
+﻿@model List<cottages_asp.Models.Entities.Category>;
+
+<h2>Category</h2>
+<br>
+
+<table class="table-hover">
+    <thead>
+        <tr>
+            <th>CategoryId</th>
+            <th>Name</th>
+            <th>Icon</th>
+
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var category in Model)
+        {
+            <tr>
+                <td>@category.CategoryId</td>              
+                <td>@category.Name</td>
+                <td>@category.Icon</td>
+                <td><a asp-controller="Category" asp-action="Update" asp-route-id=@category.CategoryId> Update </a></td>
+                <td><a asp-controller="Category" asp-action="Delete" asp-route-id=@category.CategoryId> Delete </a></td>
+            </tr>
+        }
+</tbody>
+</table>>

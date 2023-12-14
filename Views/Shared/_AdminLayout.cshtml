@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+	<link rel="stylesheet" href="~/cottages_asp.styles.css" asp-append-version="true" />
+	<link rel="stylesheet" href="~/css/admin.css" asp-append-version="true" />
+	<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+</head>
+
+<body>
+	<nav class="admin-placement">
+		<div class="navbar-collapse collapse d-sm-inline-flex justify-content-between w-100">
+			<ul class="navbar-nav row flex-column left-placement pos">
+				<li class="nav-item admin-dropdown">
+					<a
+						class="admin-nav-dropdown nav-link dropdown-toggle left-placеment"
+						href="#"
+					>
+						Building <span class="badge badge-secondary">0</span>
+					</a>
+					<div class="admin-nav-dropdown-items">
+						<a class="nav-link text-dark" asp-area="" asp-controller="Building" asp-action="Add">Add Building</a>
+						<a class="nav-link text-dark" asp-area="" asp-controller="Building" asp-action="Update">Update Building</a>
+						<a class="nav-link text-dark" asp-area="" asp-controller="Building" asp-action="Delete">Remove Building</a>
+					</div>
+				</li>
+                <a class="nav-link text-dark" asp-area="" asp-controller="Category" asp-action="Add">Add Category</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-dark" asp-area="" asp-controller="Category" asp-action="Update">Update Category</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-dark" asp-area="" asp-controller="Category" asp-action="Delete">Remove Category</a>
+                </li>
+				<li class="nav-item">
+					<a class="nav-link text-dark" asp-area="" asp-controller="Offer" asp-action="Add">Add Offer</a>
+				</li>
+				<li class="nav-item col lef-placment">
+					<a class="nav-link text-dark" asp-area="" asp-controller="Offer" asp-action="Update">Update Offer</a>
+				</li>
+			</ul>
+		</div>
+	</nav>
+    <div>
+        @RenderBody()
+    </div>
+
+	<script src="~/js/admin.js"></script>
+</body>
+</html>

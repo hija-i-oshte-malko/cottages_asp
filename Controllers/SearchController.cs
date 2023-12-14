@@ -1,13 +1,13 @@
-﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc;
 
-namespace Hija.Controllers
+namespace cottages_asp.Controllers
 {
-    public class SearchController : Controller
-    {
-        [HttpGet]
-        public async Task<IActionResult> Index()
-        {
-            return View();
-        }
-    }
+	public class SearchController : Controller
+	{
+		[HttpGet]
+		public async Task<IActionResult> Index()
+		{
+			return View();
+		}
+	}
 }

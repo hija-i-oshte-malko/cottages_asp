@@ -1,13 +1,13 @@
 body {
+	margin: 0;
+	padding: 0;
 }
 
 .admin-placement {
-	height: auto;
-}
-
-.box {
+	min-height: 100vh;
 	width: 25%;
 	background-color: green;
 	float: left;
-	position:absolute;
+	margin-left: 0%;
+	padding-left: 0%;
 }

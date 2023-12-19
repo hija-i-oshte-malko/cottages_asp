@@ -10,7 +10,22 @@
 </head>
 <body>
 	<nav class="admin-placement">
-
+		<div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+			<ul class="navbar-nav flex-grow-1">
+				<li class="nav-item">
+					<a class="nav-link text-dark" asp-area="" asp-controller="Building" asp-action="Add">Add Building</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link text-dark" asp-area="" asp-controller="Building" asp-action="Update">Update Building</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link text-dark" asp-area="" asp-controller="Building" asp-action="Delete">Remove Building</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link text-dark" asp-area="" asp-controller="Offer" asp-action="Add">Add Offer</a>
+				</li>
+			</ul>
+		</div>
 	</nav>
     <div>
         @RenderBody()

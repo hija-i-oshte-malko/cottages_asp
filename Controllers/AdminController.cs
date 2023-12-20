@@ -6,7 +6,6 @@ using Microsoft.AspNetCore.Mvc;
 namespace cottages_asp.Controllers;
 public class AdminController : Controller
 {
-	[HttpGet]
 	public IActionResult AdminBar()
 	{
 		return View();

@@ -107,7 +107,7 @@ public class BuildingController : Controller
 		if (building != null)
 
 		{
-			var viewModel = new DeleteBuildingViewModel()
+			var viewModel = new DeleteBuidlingViewModel()
 			{
 				BuildingId = building.BuildingId,
 				Location = building.Location,
@@ -128,7 +128,7 @@ public class BuildingController : Controller
 
 	[HttpPost]
 
-	public async Task<IActionResult> Delete(DeleteBuildingViewModel model)
+	public async Task<IActionResult> Delete(DeleteBuidlingViewModel model)
 	{
 		var building = await _context.Buildings.FindAsync(model.BuildingId);
 		if (building != null)

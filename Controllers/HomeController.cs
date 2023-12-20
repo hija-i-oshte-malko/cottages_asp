@@ -4,28 +4,28 @@ using System.Diagnostics;
 
 namespace cottages_asp.Controllers;
 
-public class HomeController : Controller
-{
-	private readonly ILogger<HomeController> _logger;
-
-	public HomeController(ILogger<HomeController> logger)
+	public class HomeController : Controller
 	{
-		_logger = logger;
-	}
+		private readonly ILogger<HomeController> _logger;
 
-	public IActionResult Index()
-	{
+		public HomeController(ILogger<HomeController> logger)
+		{
+			_logger = logger;
+		}
+
+		public IActionResult Index()
+		{
 		return this.View();
-	}
+		}
 
-	public IActionResult Privacy()
-	{
+		public IActionResult Privacy()
+		{
 		return this.View();
-	}
+		}
 
-	[ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-	public IActionResult Error()
-	{
+		[ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
+		public IActionResult Error()
+		{
 		return this.View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
 	}
 }

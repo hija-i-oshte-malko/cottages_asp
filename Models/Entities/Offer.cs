@@ -5,6 +5,9 @@ namespace cottages_asp.Models.Entities;
 
 public class Offer
 {
+	public Offer()
+		=> Id = Guid.NewGuid();
+
 	[Key]
 	public Guid Id { get; set; }
 

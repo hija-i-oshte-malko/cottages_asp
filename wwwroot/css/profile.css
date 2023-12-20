@@ -1,0 +1,31 @@
+.bio {
+	margin-left: 5px;
+}
+
+.container .content-large,
+.container .content-small {
+	padding: 10px;
+}
+
+.content-small {
+	border: 1px solid gray;
+	border-radius: 30px;
+}
+
+h1 {
+	text-align: center;
+}
+
+.button {
+	border-radius: 20px;
+	color: white;
+	border-color: black;
+}
+
+.profile-content {
+	font-size: 16px;
+}
+
+	.profile-content .bold {
+		font-weight: bold;
+	}

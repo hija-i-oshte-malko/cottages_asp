@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+	<link rel="stylesheet" href="~/cottages_asp.styles.css" asp-append-version="true" />
+	<link rel="stylesheet" href="~/css/admin.css" asp-append-version="true" />
+	<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+</head>
+<body>
+	<nav class="admin-placement">
+		<div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+			<ul class="navbar-nav flex-grow-1">
+				<li class="nav-item">
+					<a class="nav-link text-dark" asp-area="" asp-controller="Building" asp-action="Add">Add Building</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link text-dark" asp-area="" asp-controller="Building" asp-action="Update">Update Building</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link text-dark" asp-area="" asp-controller="Building" asp-action="Delete">Remove Building</a>
+				</li>
+                <a class="nav-link text-dark" asp-area="" asp-controller="Category" asp-action="Add">Add Category</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-dark" asp-area="" asp-controller="Category" asp-action="Update">Update Category</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-dark" asp-area="" asp-controller="Category" asp-action="Delete">Remove Category</a>
+                </li>
+				<li class="nav-item">
+					<a class="nav-link text-dark" asp-area="" asp-controller="Offer" asp-action="Add">Add Offer</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link text-dark" asp-area="" asp-controller="Offer" asp-action="Update">Update Offer</a>
+				</li>
+			</ul>
+		</div>
+	</nav>
+    <div>
+        @RenderBody()
+    </div>
+</body>
+</html>

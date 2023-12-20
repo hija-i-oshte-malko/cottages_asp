@@ -1,3 +1,6 @@
+using cotagges_asp.Data;
+using Microsoft.EntityFrameworkCore;
+
 namespace cottages_asp
 {
 	public class Program
@@ -8,8 +11,17 @@ namespace cottages_asp
 
 			// Add services to the container.
 			builder.Services.AddControllersWithViews();
+			builder.Services.AddDbContext<CottagesDbContext>(options =>
+			options.UseSqlServer(builder.Configuration.GetConnectionString("Cottagesconnectionstring")));
+
+
+			builder.Services.AddControllersWithViews();
 
 			var app = builder.Build();
+			builder.Services.AddControllersWithViews();
+			var connectionString = builder.Configuration.GetConnectionString("CottagesConnectionString") ?? throw new InvalidOperationException("Connection string 'DefaultConnection' not found.");
+			builder.Services.AddDbContext<CottagesDbContext>(options =>
+				options.UseSqlServer(connectionString));
 
 			// Configure the HTTP request pipeline.
 			if (!app.Environment.IsDevelopment())

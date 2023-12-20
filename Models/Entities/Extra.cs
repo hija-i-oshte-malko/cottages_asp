@@ -1,22 +1,12 @@
-﻿using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
+using System.ComponentModel.DataAnnotations;
 
-namespace cottages_asp.Models.Entities
+namespace cottages_asp.Models.Entities;
+
+public class Extra
 {
-    public class Extra
-    {
-        public Extra()
-        {
-            ExtraId = Guid.NewGuid();
-        }
-        [Key]
-        public Guid ExtraId { get; set; }
-        [Required]
-        public string Name { get; set; }
-        [Required]
-        public string Icon { get; set; }
-
-        public ICollection<RoomExtra> RoomExtras { get; set; }
-    }
+	[Key]
+	public Guid Id { get; set; }
+	public string Name { get; set; } = default!;
+	public string Icon { get; set; } = default!;
+	public ICollection<Room> Rooms { get; set; } = default!;
 }

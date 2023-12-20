@@ -1,24 +1,15 @@
-﻿using System.ComponentModel.DataAnnotations;
-using System.Linq;
+using System.ComponentModel.DataAnnotations;
 
-namespace cottages_asp.Models.Entities
+namespace cottages_asp.Models.Entities;
+
+public class Category
 {
-    public class Category
-    {
-        public Category()
-        {
-            CategoryId = Guid.NewGuid();
-        }
-        [Key]
-        public Guid CategoryId { get; set; }
- 
-        [Required]
-        public string Name { get; set; }
-        [Required]
-        public string Icon { get; set; }
+	public Category()
+		=> Id = Guid.NewGuid();
 
-        ICollection<CategoryHotel> CategoryHotels { get; set; }
-
-            
-    }
+	[Key]
+	public Guid Id { get; set; }
+	public string Name { get; set; } = default!;
+	public string Icon { get; set; } = default!;
+	public ICollection<Category> Categories { get; set; } = default!;
 }

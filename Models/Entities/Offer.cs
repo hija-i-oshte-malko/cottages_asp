@@ -1,25 +1,20 @@
-﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace cottages_asp.Models.Entities
+namespace cottages_asp.Models.Entities;
+
+public class Offer
 {
-    public class Offer
-    {
-        public Offer()
-        {
-            OfferId = Guid.NewGuid();
-        }
-        [Key]
-        public Guid OfferId { get; set; }
+	[Key]
+	public Guid Id { get; set; }
 
-        [ForeignKey("User")]
-        public Guid UserId { get; set; } 
-        public User User { get; set; }
+	[ForeignKey("User")]
+	public Guid UserId { get; set; }
+	public User User { get; set; } = default!;
 
-        [ForeignKey("Building")]
-        public Guid BuildingId { get; set; } 
-        public Building Building { get; set; }
+	[ForeignKey("Building")]
+	public Guid BuildingId { get; set; }
+	public Building Building { get; set; } = default!;
 
-        ICollection<Room> Rooms { get; set; }
-    }
+	public ICollection<Room> Rooms { get; set; } = default!;
 }

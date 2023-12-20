@@ -1,12 +1,11 @@
-﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc;
 
-namespace cottages_asp.Controllers
+namespace cottages_asp.Controllers;
+
+public class ProfileController : Controller
 {
-	public class ProfileController : Controller
+	public IActionResult Index()
 	{
-		public IActionResult Index()
-		{
-			return View();
-		}
+		return this.View();
 	}
 }

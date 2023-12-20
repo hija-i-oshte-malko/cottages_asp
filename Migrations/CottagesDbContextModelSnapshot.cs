@@ -24,7 +24,7 @@ namespace cottages_asp.Migrations
 
             modelBuilder.Entity("cottages_asp.Models.Entities.Building", b =>
                 {
-                    b.Property<Guid>("BuildingId")
+                    b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
@@ -36,18 +36,28 @@ namespace cottages_asp.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<int>("Review")
                         .HasColumnType("int");
 
-                    b.HasKey("BuildingId");
+                    b.HasKey("Id");
 
                     b.ToTable("Buildings");
                 });
 
             modelBuilder.Entity("cottages_asp.Models.Entities.Category", b =>
                 {
-                    b.Property<Guid>("CategoryId")
+                    b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid?>("BuildingId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid?>("CategoryId")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("Icon")
@@ -58,35 +68,18 @@ namespace cottages_asp.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("CategoryId");
-
-                    b.ToTable("Categories");
-                });
-
-            modelBuilder.Entity("cottages_asp.Models.Entities.CategoryHotel", b =>
-                {
-                    b.Property<Guid>("CategoryHotelId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<Guid>("BuildingId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<Guid>("CategoryId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.HasKey("CategoryHotelId");
+                    b.HasKey("Id");
 
                     b.HasIndex("BuildingId");
 
                     b.HasIndex("CategoryId");
 
-                    b.ToTable("Categoryhotels");
+                    b.ToTable("Categories");
                 });
 
             modelBuilder.Entity("cottages_asp.Models.Entities.Extra", b =>
                 {
-                    b.Property<Guid>("ExtraId")
+                    b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
@@ -98,14 +91,14 @@ namespace cottages_asp.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("ExtraId");
+                    b.HasKey("Id");
 
                     b.ToTable("Extras");
                 });
 
             modelBuilder.Entity("cottages_asp.Models.Entities.Offer", b =>
                 {
-                    b.Property<Guid>("OfferId")
+                    b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
@@ -115,7 +108,7 @@ namespace cottages_asp.Migrations
                     b.Property<Guid>("UserId")
                         .HasColumnType("uniqueidentifier");
 
-                    b.HasKey("OfferId");
+                    b.HasKey("Id");
 
                     b.HasIndex("BuildingId");
 
@@ -126,7 +119,7 @@ namespace cottages_asp.Migrations
 
             modelBuilder.Entity("cottages_asp.Models.Entities.Room", b =>
                 {
-                    b.Property<Guid>("RoomId")
+                    b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
@@ -143,32 +136,11 @@ namespace cottages_asp.Migrations
                     b.Property<double>("Price")
                         .HasColumnType("float");
 
-                    b.HasKey("RoomId");
+                    b.HasKey("Id");
 
                     b.HasIndex("OfferId");
 
                     b.ToTable("Rooms");
-                });
-
-            modelBuilder.Entity("cottages_asp.Models.Entities.RoomExtra", b =>
-                {
-                    b.Property<Guid>("RoomExtraId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<Guid>("ExtraId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<Guid>("RoomId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.HasKey("RoomExtraId");
-
-                    b.HasIndex("ExtraId");
-
-                    b.HasIndex("RoomId");
-
-                    b.ToTable("RoomExtras");
                 });
 
             modelBuilder.Entity("cottages_asp.Models.Entities.User", b =>
@@ -188,7 +160,7 @@ namespace cottages_asp.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("PhonenNumber")
+                    b.Property<string>("Phone")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
@@ -201,23 +173,30 @@ namespace cottages_asp.Migrations
                     b.ToTable("Users");
                 });
 
-            modelBuilder.Entity("cottages_asp.Models.Entities.CategoryHotel", b =>
+            modelBuilder.Entity("ExtraRoom", b =>
                 {
-                    b.HasOne("cottages_asp.Models.Entities.Building", "Building")
-                        .WithMany()
-                        .HasForeignKey("BuildingId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                    b.Property<Guid>("ExtrasId")
+                        .HasColumnType("uniqueidentifier");
 
-                    b.HasOne("cottages_asp.Models.Entities.Category", "Category")
-                        .WithMany()
-                        .HasForeignKey("CategoryId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                    b.Property<Guid>("RoomsId")
+                        .HasColumnType("uniqueidentifier");
 
-                    b.Navigation("Building");
+                    b.HasKey("ExtrasId", "RoomsId");
 
-                    b.Navigation("Category");
+                    b.HasIndex("RoomsId");
+
+                    b.ToTable("ExtraRoom");
+                });
+
+            modelBuilder.Entity("cottages_asp.Models.Entities.Category", b =>
+                {
+                    b.HasOne("cottages_asp.Models.Entities.Building", null)
+                        .WithMany("Categories")
+                        .HasForeignKey("BuildingId");
+
+                    b.HasOne("cottages_asp.Models.Entities.Category", null)
+                        .WithMany("Categories")
+                        .HasForeignKey("CategoryId");
                 });
 
             modelBuilder.Entity("cottages_asp.Models.Entities.Offer", b =>
@@ -242,7 +221,7 @@ namespace cottages_asp.Migrations
             modelBuilder.Entity("cottages_asp.Models.Entities.Room", b =>
                 {
                     b.HasOne("cottages_asp.Models.Entities.Offer", "Offer")
-                        .WithMany()
+                        .WithMany("Rooms")
                         .HasForeignKey("OfferId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -250,38 +229,36 @@ namespace cottages_asp.Migrations
                     b.Navigation("Offer");
                 });
 
-            modelBuilder.Entity("cottages_asp.Models.Entities.RoomExtra", b =>
+            modelBuilder.Entity("ExtraRoom", b =>
                 {
-                    b.HasOne("cottages_asp.Models.Entities.Extra", "Extra")
-                        .WithMany("RoomExtras")
-                        .HasForeignKey("ExtraId")
+                    b.HasOne("cottages_asp.Models.Entities.Extra", null)
+                        .WithMany()
+                        .HasForeignKey("ExtrasId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("cottages_asp.Models.Entities.Room", "Room")
-                        .WithMany("RoomExtras")
-                        .HasForeignKey("RoomId")
+                    b.HasOne("cottages_asp.Models.Entities.Room", null)
+                        .WithMany()
+                        .HasForeignKey("RoomsId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-
-                    b.Navigation("Extra");
-
-                    b.Navigation("Room");
                 });
 
             modelBuilder.Entity("cottages_asp.Models.Entities.Building", b =>
                 {
+                    b.Navigation("Categories");
+
                     b.Navigation("Offers");
                 });
 
-            modelBuilder.Entity("cottages_asp.Models.Entities.Extra", b =>
+            modelBuilder.Entity("cottages_asp.Models.Entities.Category", b =>
                 {
-                    b.Navigation("RoomExtras");
+                    b.Navigation("Categories");
                 });
 
-            modelBuilder.Entity("cottages_asp.Models.Entities.Room", b =>
+            modelBuilder.Entity("cottages_asp.Models.Entities.Offer", b =>
                 {
-                    b.Navigation("RoomExtras");
+                    b.Navigation("Rooms");
                 });
 
             modelBuilder.Entity("cottages_asp.Models.Entities.User", b =>

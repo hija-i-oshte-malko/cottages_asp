@@ -1,34 +1,16 @@
-﻿using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-
-namespace cottages_asp.Models.Entities
+using System.ComponentModel.DataAnnotations;
+namespace cottages_asp.Models.Entities;
+public class Building
 {
-    public class Building
-    {
-        public Building()
-        {
-            BuildingId = Guid.NewGuid();
-        }
-        [Key]
-        public Guid BuildingId { get; set; }
+	public Building()
+		=> Id = Guid.NewGuid();
 
-        [Required]
-        public string Location { get; set; }
-
-        [Required]
-
-        private string Name { get; set; }
-               
-        [Required]
-        public string Description { get; set; }
-
-        [Required]
-        public int Review { get; set; }
-
-
-
-        public ICollection<Offer> Offers { get; set; }
-        
-    }
+	[Key]
+	public Guid Id { get; set; }
+	public string Location { get; set; } = default!;
+	public string Name { get; set; } = default!;
+	public string Description { get; set; } = default!;
+	public int Review { get; set; }
+	public ICollection<Offer> Offers { get; set; } = default!;
+	public ICollection<Category> Categories { get; set; } = default!;
 }

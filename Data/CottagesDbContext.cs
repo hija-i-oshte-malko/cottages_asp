@@ -1,22 +1,18 @@
 using Microsoft.EntityFrameworkCore;
 using cottages_asp.Models.Entities;
 
-namespace cotagges_asp.Data
+namespace cotagges_asp.Data;
+
+public class CottagesDbContext : DbContext
 {
-    public class CottagesDbContext : DbContext
-    {
-		public CottagesDbContext(DbContextOptions<CottagesDbContext> options)
-           : base(options)
-        {
-        }
-        public DbSet<Building> Buildings { get; set; }
-        public DbSet<Category> Categories { get; set; }
-        public DbSet<CategoryHotel> Categoryhotels { get; set; }
-        public DbSet<Extra> Extras { get; set; }
-        public DbSet<Offer> Offers { get; set; }
-        public DbSet<Room> Rooms { get; set; }
-        public DbSet<RoomExtra> RoomExtras { get; set; }
-        public DbSet<User> Users { get; set; }
-    }
+	public CottagesDbContext(DbContextOptions<CottagesDbContext> options)
+	   : base(options) { }
+
+	public DbSet<Building> Buildings => this.Set<Building>();
+	public DbSet<Category> Categories => this.Set<Category>();
+	public DbSet<Extra> Extras => this.Set<Extra>();
+	public DbSet<Offer> Offers => this.Set<Offer>();
+	public DbSet<Room> Rooms => this.Set<Room>();
+	public DbSet<User> Users => this.Set<User>();
 }
 

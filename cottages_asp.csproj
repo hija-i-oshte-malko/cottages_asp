@@ -9,7 +9,6 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <UserSecretsId>4fd6b6de-c03d-4f43-adc8-fd39fd90894f</UserSecretsId>
   </PropertyGroup>
-
   <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.25" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="6.0.25" />
@@ -20,9 +19,13 @@
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="6.0.16" />
   </ItemGroup>
   <ItemGroup>
-    <None Remove="ViewModels\" />
-  </ItemGroup>
-  <ItemGroup>
     <Folder Include="ViewModels\" />
   </ItemGroup>
+	<ItemGroup>
+		<PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="6.0.25" />
+		<PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="6.0.25" />
+		<PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="6.0.25" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="6.0.25" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="6.0.25" />
+	</ItemGroup>
 </Project>

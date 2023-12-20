@@ -1,3 +1,6 @@
+using cotagges_asp.Data;
+using Microsoft.EntityFrameworkCore;
+
 namespace cottages_asp
 {
 	public class Program
@@ -7,6 +10,11 @@ namespace cottages_asp
 			var builder = WebApplication.CreateBuilder(args);
 
 			// Add services to the container.
+			builder.Services.AddControllersWithViews();
+			builder.Services.AddDbContext<CottagesDbContext>(options =>
+			options.UseSqlServer(builder.Configuration.GetConnectionString("Cottagesconnectionstring")));
+
+
 			builder.Services.AddControllersWithViews();
 
 			var app = builder.Build();

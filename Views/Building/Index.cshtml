@@ -1,0 +1,33 @@
+﻿@model List<cotagges_asp.Models.Entities.Building>;
+
+<h2>Building</h2>
+<br>
+
+<table class="table-hover">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Location</th>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Review</th>
+
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var breed in Model)
+        {
+            <tr>
+                <td>@building.Id</td>
+                <td>@building.Location</td>
+                <td>@building.Name</td>
+                <td>@building.Description</td>
+                <td>@building.Review</td>
+                <td><a asp-controller="Building" asp-action="Update" asp-route-id=@building.Id> Update </a></td>
+                <td><a asp-controller="Building" asp-action="Delete" asp-route-id=@building.Id> Delete </a></td>
+            </tr>
+        }
+        }
+
+        }

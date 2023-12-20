@@ -21,12 +21,6 @@ a.navbar-brand {
   background-color: #1b6ec2;
   border-color: #1861ac;
 }
-.navbar {
-    background-color: #1E7D91 !important;
-    background-image: linear-gradient(45deg, transparent 20%, #00373E 25%, transparent 25%), linear-gradient(-45deg, transparent 20%, #00373E 25%, transparent 25%), linear-gradient(-45deg, transparent 75%, #00373E 80%, transparent 0), radial-gradient(#00373E 2px, transparent 0) !important;
-    background-size: 30px 30px, 30px 30px !important;
-    border-bottom: 2px solid #C39103;
-}
 .container-fluid {
     display: flex;
     justify-content: space-between;
@@ -39,41 +33,24 @@ a.navbar-brand {
     padding: 8px; /* Adjust padding as required */
     color: #000; /* Input text color */
 }
-.navbar-nav .nav-item .nav-link {
-    color: #ECEBE8 !important; /* Change this color to your desired font color */
-    /* Other necessary styles */
-}
     .search button {
     background-color: #ECEBE8; /* Change this color to your desired input background color */
-    border: 3px solid #C39103; /* Remove default input border if desired */
+    border:none;
     border-radius: 40px; /* Adjust border-radius if needed */
-    padding-left: 3px;
     padding: 8px; /* Adjust padding as required */
     color: #000; /* Input text color */
 }
-
-.nav-item {
-    background: #005D68 !important;
-    margin-right: 4px;
+.language{
+    padding-right: 20px;
+    align-content:center;
 }
-
-.nav-link a{
-    color: #ECEBE8 !important;
-}
-
 .search {
-    border: 3px solid #346D2F;
+    border-left: 3px solid black;
     margin-right: 10px;
     background: #ECEBE8;
-    border-radius: 40px;
+    border-radius: 3px;
     display: flex;
     align-items: center;
-}
-
-.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
-    color: #ECEBE8;
-    background-color: #1b6ec2;
-    border-color: #C39103;
 }
 
 .border-top {

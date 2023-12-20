@@ -5,11 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - cottages_asp</title>
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
-	<link rel="stylesheet" href="~/css/search.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/hotel.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/lib/font-awesome/css/all.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/cottages_asp.styles.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
 </head>
 <body>
+
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light border-bottom box-shadow mb-3">
             <div class="container-fluid">
@@ -32,7 +34,7 @@
                             <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" asp-area="" asp-controller="Hotel" asp-action="Index">Hotels</a>
+                            <a class="nav-link" asp-area="" asp-controller="Hotel" asp-action="Index"><i class="fa-solid fa-globe"></i>Hotels</a>
                         </li>
                     </ul>
 					<partial name="_LoginPartial" />
@@ -40,8 +42,10 @@
 
 
             </div>
-            <div>
-                <button class="ezik" type="button">En</button>
+            <div class="language ">
+                    <form class="d-flex" id="search">
+                    <button class="btn btn-outline-success " type="submit">En<i class="fa-solid fa-earth-europe"></i> </button>
+                    </form>
             </div>
                 <div class="search">
                     <form class="d-flex" id="search">

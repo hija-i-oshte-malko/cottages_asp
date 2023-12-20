@@ -114,3 +114,40 @@ body {
   border-radius: 0px 15px 15px 0px
 
 }
+/* Style for the container */
+.gallery-container {
+    max-width: 800px; /* Adjust this value to your desired width */
+    margin: 0 auto; /* Center the container */
+    padding: 20px;
+}
+
+/* Style for the image gallery */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Three columns */
+    grid-template-rows: repeat(2, 1fr); /* Two rows */
+    gap: 2px;
+    justify-content: center; /* Center the grid horizontally */
+}
+
+    .gallery img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 8px;
+        transition: transform 0.3s ease-in-out;
+    }
+
+        .gallery img:hover {
+            transform: scale(1.2); /* Hover animation */
+        }
+
+    /* Ensure square shape for each image */
+    .gallery img {
+        aspect-ratio: 4 / 3; /* Force aspect ratio to 1:1 (square) */
+    }
+img {
+    border: none;
+    margin: 0;
+    padding: 0;
+}

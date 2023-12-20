@@ -2,10 +2,9 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace cottages_asp.Controllers;
 
-public class SearchController : Controller
+public class ProfileController : Controller
 {
-	[HttpGet]
-	public async Task<IActionResult> Index()
+	public IActionResult Index()
 	{
 		return this.View();
 	}

@@ -10,6 +10,7 @@
   "profiles": {
     "cottages_asp": {
       "commandName": "Project",
+      "dotnetRunMessages": true,
       "launchBrowser": true,
       "applicationUrl": "https://localhost:7004;http://localhost:5202",
       "environmentVariables": {

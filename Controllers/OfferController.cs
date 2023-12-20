@@ -39,4 +39,56 @@ public class OfferController : Controller
 		return RedirectToAction("Index");
 
 	}
+	[HttpGet]
+	public async Task<IActionResult> Update(Guid id)
+	{
+
+		var offer = await _context.Offers.FirstOrDefaultAsync(x => x.OfferId == id);
+		if (offer != null)
+
+		{
+			var viewModel = new UpdateBuildingViewModel()
+			{
+				BuildingId = offer.BuildingId,
+
+			};
+
+			return await Task.Run(() => View("Update", viewModel));
+
+		}
+		return RedirectToAction("Index");
+
+
+	}
+
+
+	[HttpPost]
+	public async Task<IActionResult> Update(UpdateOfferViewModel model)
+	{
+
+		var offer = await _context.Offers.FindAsync(model.BuildingId);
+		if (offer != null)
+
+		{
+			offer.BuildingId = model.BuildingId;
+			offer.OfferId = model.OfferId;
+		}
+		await _context.SaveChangesAsync();
+		return RedirectToAction("Index");
+
+	}
+
+	[HttpGet]
+	public async Task<IActionResult> Delete(Guid id)
+	{
+		var snake = await _context.Offers.FindAsync(id);
+		if (snake is null)
+		{
+			return await Task.Run(() => NotFound());
+		}
+
+		_context.Offers.Remove(snake);
+		await _context.SaveChangesAsync();
+		return await Task.Run(() => RedirectToAction("All"));
+	}
 }

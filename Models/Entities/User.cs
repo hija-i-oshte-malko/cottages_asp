@@ -1,15 +1,9 @@
-using System.ComponentModel.DataAnnotations;
+using Microsoft.AspNetCore.Identity;
 
 namespace cottages_asp.Models.Entities;
 
-public class User
+public class User : IdentityUser<Guid>
 {
-	[Key]
-	public Guid Id { get; set; }
-	public bool IsOffering { get; set; }
-	public string Username { get; set; } = default!;
-	public string Password { get; set; } = default!;
-	public string Email { get; set; } = default!;
-	public string Phone { get; set; } = default!;
-	public ICollection<Offer> Offers { get; } = default!;
+	public string FirstName { get; set; } = default!;
+	public string LastName { get; set; } = default!;
 }

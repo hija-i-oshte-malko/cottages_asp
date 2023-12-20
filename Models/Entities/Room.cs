@@ -5,6 +5,9 @@ namespace cottages_asp.Models.Entities;
 
 public class Room
 {
+	public Room()
+		=> Id = Guid.NewGuid();
+
 	[Key]
 	public Guid Id { get; set; }
 	public string Name { get; set; } = default!;

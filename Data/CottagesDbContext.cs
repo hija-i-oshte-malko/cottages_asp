@@ -1,9 +1,11 @@
-using Microsoft.EntityFrameworkCore;
 using cottages_asp.Models.Entities;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 
 namespace cotagges_asp.Data;
 
-public class CottagesDbContext : DbContext
+public class CottagesDbContext : IdentityDbContext<User, IdentityRole<Guid>, Guid>
 {
 	public CottagesDbContext(DbContextOptions<CottagesDbContext> options)
 	   : base(options) { }
@@ -13,6 +15,5 @@ public class CottagesDbContext : DbContext
 	public DbSet<Extra> Extras => this.Set<Extra>();
 	public DbSet<Offer> Offers => this.Set<Offer>();
 	public DbSet<Room> Rooms => this.Set<Room>();
-	public DbSet<User> Users => this.Set<User>();
 }
 

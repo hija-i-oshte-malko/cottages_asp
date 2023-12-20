@@ -18,6 +18,10 @@ namespace cottages_asp
 			builder.Services.AddControllersWithViews();
 
 			var app = builder.Build();
+			builder.Services.AddControllersWithViews();
+			var connectionString = builder.Configuration.GetConnectionString("CottagesConnectionString") ?? throw new InvalidOperationException("Connection string 'DefaultConnection' not found.");
+			builder.Services.AddDbContext<CottagesDbContext>(options =>
+				options.UseSqlServer(connectionString));
 
 			// Configure the HTTP request pipeline.
 			if (!app.Environment.IsDevelopment())

@@ -1,0 +1,91 @@
+﻿@section MainCss
+{
+	<link rel="stylesheet" href="~/lib/fancybox/jquery.fancybox.css" asp-append-version="true" />
+	<link rel="stylesheet" href="~/css/hotel.css" asp-append-version="true" />
+}
+
+@section FancyBoxScript
+{
+	<script type="text/javascript" src="~/lib/fancybox/jquery.fancybox.js"></script>
+	<script type="text/javascript" src="~/js/hotel-details.js"></script>
+}
+<div class="gallery-container">
+	<div class="gallery">
+		<a data-fancybox="gallery" href="images/hotel1.jpg">
+			<img src="images/hotel1.jpg" alt="Hotel Front 1">
+		</a>
+		<a data-fancybox="gallery" href="images/hotel2.jpg">
+			<img src="images/hotel2.jpg" alt="Hotel Front 1">
+		</a>
+		<a data-fancybox="gallery" href="images/hotel3.jpg">
+			<img src="images/hotel3.jpg" alt="Hotel Front 1">
+		</a>
+		<a data-fancybox="gallery" href="images/hotel4.jpg">
+			<img src="images/hotel4.jpg" alt="Hotel Front 1">
+		</a>
+		<a data-fancybox="gallery" href="images/hotel5.jpg">
+			<img src="images/hotel5.jpg" alt="Hotel Front 1">
+		</a>
+		<a data-fancybox="gallery" href="images/hotel6.jpg">
+			<img src="images/hotel6.jpg" alt="Hotel Front 1">
+		</a>
+		<a class="hidden" data-fancybox="gallery" href="images/hotel6.jpg">
+			<img src="images/hotel6.jpg" alt="Hotel Front 1">
+		</a>
+		<a class="hidden" data-fancybox="gallery" href="images/hotel6.jpg">
+			<img src="images/hotel6.jpg" alt="Hotel Front 1">
+		</a>
+		<a class="hidden" data-fancybox="gallery" href="images/hotel6.jpg">
+			<img src="images/hotel6.jpg" alt="Hotel Front 1">
+		</a>
+	</div>
+</div>
+
+<div class="container">
+	<h1 class="mb-4">Grand Lux Cottage</h1>
+	<div class="row">
+		<div class="col-7">
+			<div class="content-section">
+				<div class="mini-profile mb-3 row">
+					<img src="https://meragor.com/files/styles//ava_800_800_wm/avatar-211523-000242.png" class="col flex-fill profile-picture rounded-circle ms-1" alt="nqma">
+					<div class="col row flex-column justify-content-start align-items-center profile">
+						<div class="fs-4 profile-name col">John Wellington</div>
+						<div class="profile-info col">Cottage User</div>
+					</div>
+				</div>
+				<div class="row appliances flex-wrap mb-3">
+					<div class="ms-2 flex-fill mb-1 col-3"><i class="fa-solid fa-shield"></i>&nbsp;Appliancasde dsads 1</div>
+					<div class="ms-2 flex-fill mb-1 col-3"><i class="fa-solid fa-shield"></i>&nbsp;Appliance 2</div>
+					<div class="ms-2 flex-fill mb-1 col-3"><i class="fa-solid fa-shield"></i>&nbsp;Appliance 3</div>
+					<div class="ms-2 flex-fill mb-1 col-3"><i class="fa-solid fa-shield"></i>&nbsp;Appliance 4</div>
+					<div class="ms-2 flex-fill mb-1 col-3"><i class="fa-solid fa-shield"></i>&nbsp;Appliance 5</div>
+					<div class="ms-2 flex-fill mb-1 col-3"><i class="fa-solid fa-shield"></i>&nbsp;Appliance 5</div>
+					<div class="ms-2 flex-fill mb-1 col-3"><i class="fa-solid fa-shield"></i>&nbsp;Appliance 5</div>
+				</div>
+				<div class="desc"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus mattis nunc ut lacus tincidunt porta. Morbi id magna ut ante semper hendrerit. Proin ullamcorper, leo a luctus lobortis, elit eros maximus odio, a aliquet purus purus id eros. Aliquam id nibh porta, tempus arcu ut, auctor mi. Nunc et enim blandit, varius magna sit amet, tincidunt augue. Nulla pellentesque magna vel ullamcorper mollis. Fusce magna leo, convallis sodales massa sed, venenatis vestibulum leo. Curabitur scelerisque egestas enim vel mollis. Fusce dictum lacus ut elit posuere auctor. Aliquam nec orci ornare, cursus dui at, luctus diam. Praesent tellus magna, scelerisque in arcu at, gravida vestibulum mi. Duis eros ipsum, scelerisque vitae lacinia et, tincidunt fringilla purus. Donec tincidunt convallis quam eget condimentum. Quisque hendrerit augue non aliquam placerat. Integer vestibulum malesuada metus, a posuere metus porta a. Nullam vitae bibendum augue, vel gravida nisi. </div>
+			</div>
+		</div>
+		<div class="col-5">
+			<div class="sidebar-item p-3">
+				<div class="make-me-sticky">
+					<div class="fs-3 text-start mb-2">Pick your dates:</div>
+					<div class="mb-3">
+						<div class="date-picker" style="justify-content: center;">
+							<input type="date" class="form-control" name="StartDate">
+							<input type="date" class="form-control" name="EndDate">
+						</div>
+					</div>
+					<div class="row justify-content-center mb-3">
+						<button type="button" class="btn btn-success col-8">Get price</button>
+					</div>
+					<div class="row justify-content-start">
+						<div class="fs-5 col text-start">Price (per night):</div>
+					</div>
+					<div class="row justify-content-start">
+						<div class="fs-5 col text-start">Overall:</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

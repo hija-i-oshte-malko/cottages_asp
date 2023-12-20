@@ -1,48 +1,120 @@
-﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
-for details on configuring this project to bundle and minify static web assets. */
-
-a.navbar-brand {
-  white-space: normal;
-  text-align: center;
-  word-break: break-all;
+.navbar {
+	background-color: #fff;
+	border-bottom: 1px solid #e5e5e5;
+	box-shadow: 0.25rem 0.75rem rgba(0, 0, 0, .05);
 }
 
-a {
-  color: #0077cc;
+.navbar-brand {
+	white-space: normal;
+	text-align: center;
+	word-break: break-all;
+	color: #0077cc; /* Brand color */
 }
 
-.btn-primary {
-  color: #fff;
-  background-color: #1b6ec2;
-  border-color: #1861ac;
+.navbar-toggler {
+	border-color: #1861ac; /* Toggler color */
 }
 
-.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
-  color: #fff;
-  background-color: #1b6ec2;
-  border-color: #1861ac;
+.navbar-nav .nav-link {
+	color: #0077cc;
+	transition: color 0.3s; /* Adding transition for color change */
 }
+
+	.navbar-nav .nav-link:hover {
+		color: #1b6ec2;
+	}
+
+/* Additional styles for smoother transitions */
+
+.navbar-nav .nav-link {
+	position: relative;
+}
+
+	.navbar-nav .nav-link::before {
+		content: '';
+		position: absolute;
+		width: 100%;
+		height: 2px;
+		bottom: -2px;
+		left: 0;
+		background-color: #1b6ec2;
+		visibility: hidden;
+		transform: scaleX(0);
+		transition: all 0.3s ease-in-out 0s;
+	}
+
+	.navbar-nav .nav-link:hover::before {
+		visibility: visible;
+		transform: scaleX(1);
+	}
+
+.form-control {
+	border-color: #1861ac; /* Search bar border color */
+}
+
+.btn-outline-success {
+	color: #fff;
+	background-color: #1b6ec2; /* Search button color */
+	border-color: #1861ac;
+}
+
+	.btn-outline-success:hover {
+		background-color: #1861ac; /* Search button hover color */
+	}
+
+/* Other styles */
 
 .border-top {
-  border-top: 1px solid #e5e5e5;
+	border-top: 1px solid #e5e5e5;
 }
+
 .border-bottom {
-  border-bottom: 1px solid #e5e5e5;
+	border-bottom: 1px solid #e5e5e5;
 }
 
 .box-shadow {
-  box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+	box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
 }
 
 button.accept-policy {
-  font-size: 1rem;
-  line-height: inherit;
+	font-size: 1rem;
+	line-height: inherit;
 }
 
 .footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  white-space: nowrap;
-  line-height: 60px;
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	white-space: nowrap;
+	line-height: 60px;
 }
+
+.custom-search-input {
+	border: none;
+	border-bottom: 2px solid #1b6ec2; /* Border color */
+	border-radius: 0;
+	background-color: transparent;
+	color: #1b6ec2; /* Text color */
+	width: 200px;
+}
+
+	.custom-search-input::placeholder {
+		color: #1b6ec2; /* Placeholder text color */
+	}
+
+	.custom-search-input:focus {
+		outline: none;
+		border-color: #da1b60; /* Border color on focus */
+	}
+
+.custom-search-btn {
+	border: 2px solid #1b6ec2;
+	border-radius: 20px;
+	color: #1b6ec2;
+	transition: background-color 0.3s, color 0.3s;
+}
+
+	.custom-search-btn:hover {
+		background-color: #1b6ec2; /* Background color on hover */
+		color: #fff; /* Text color on hover */
+	}

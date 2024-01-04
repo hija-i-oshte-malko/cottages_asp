@@ -14,9 +14,9 @@ html {
 }
 
 body {
-	margin-bottom: 60px;
+  margin-bottom: 60px;
 }
-.fs-12 {
-	font-size: 12px;
-	text-align: right;
+
+.hidden {
+	display: none;
 }

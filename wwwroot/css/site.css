@@ -16,6 +16,28 @@ html {
 body {
   margin-bottom: 60px;
 }
+.fs-12 {
+	font-size: 12px;
+	text-align: right;
+}
+body {
+	min-height: 100vh;
+	margin: 0;
+	padding: 0;
+	position: relative;
+	overflow-x:hidden;
+}
+.main-container {
+	min-height: calc(100vh - 300px);
+}
+.footer {
+	padding-top: 60px;
+	padding-bottom: 50px;
+	height: 250px;
+	color: white;
+	margin: 0;
+}
+
 
 .hidden {
 	display: none;

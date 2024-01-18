@@ -6,13 +6,12 @@
 	<title>@ViewData["Title"] - Cottages</title>
 
 	<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-	<link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+	<link rel="stylesheet" href="~/css/styles.css" asp-append-version="true" />
 	<link rel="stylesheet" href="~/lib/font-awesome/css/all.css" asp-append-version="true" />
 	<link rel="stylesheet" href="~/cottages_asp.styles.css" asp-append-version="true" />
 	<script type="text/javascript" src="~/lib/jquery/dist/jquery.min.js"></script>
 	
-	@RenderSection("FancyBoxScript", required: false)
-	@RenderSection("MainCss", required: false)
+	@RenderSection("Head", required: false)
 </head>
 
 <body>
@@ -35,6 +34,12 @@
 						<li class="nav-item">
 							<a class="nav-link " asp-area="" asp-controller="Hotel" asp-action="Index">Hotels</a>
 						</li>
+						<li class="nav-item">
+							<a class="nav-link " asp-area="" asp-controller="Profile" asp-action="Index">Profile</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link " asp-area="" asp-controller="Search" asp-action="Index">Search</a>
+						</li>
 					</ul>
 					<div class="d-flex align-items-center">
 						<!-- Empty div for spacing -->
@@ -53,7 +58,7 @@
 
 	</header>
 
-	<div class="container">
+	<div class="container main-container">
 		<main role="main" class="pb-3">
 			@RenderBody()
 		</main>

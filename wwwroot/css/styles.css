@@ -20,6 +20,7 @@ body {
 	font-size: 12px;
 	text-align: right;
 }
+
 body {
 	min-height: 100vh;
 	margin: 0;
@@ -27,9 +28,11 @@ body {
 	position: relative;
 	overflow-x:hidden;
 }
+
 .main-container {
-	min-height: calc(100vh - 300px);
+	min-height: calc(100vh - 60px);
 }
+
 .footer {
 	padding-top: 60px;
 	padding-bottom: 50px;
@@ -37,7 +40,6 @@ body {
 	color: white;
 	margin: 0;
 }
-
 
 .hidden {
 	display: none;

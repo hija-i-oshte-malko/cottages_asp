@@ -100,11 +100,11 @@ public class BuildingController : Controller
 	public async Task<IActionResult> Delete(Guid id)
 	{
 
-			var building = await context.Buildings.FirstOrDefaultAsync(x => x.BuildingId == id);
+			var building = await _context.Buildings.FirstOrDefaultAsync(x => x.BuildingId == id);
 		if (building != null)
 
 		{
-			var viewModel = new DeleteBuidlingViewModel()
+			var viewModel = new DeleteBuildingViewModel()
 			{
 				BuildingId = building.BuildingId,
 				Location = building.Location,
@@ -125,7 +125,7 @@ public class BuildingController : Controller
 
 	[HttpPost]
 
-	public async Task<IActionResult> Delete(DeleteBuidlingViewModel model)
+	public async Task<IActionResult> Delete(DeleteBuildingViewModel model)
 	{
 		var building = await _context.Buildings.FindAsync(model.BuildingId);
 		if (building != null)

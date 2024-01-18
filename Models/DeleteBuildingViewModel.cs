@@ -11,4 +11,4 @@ public class DeleteBuildingViewModel
 	public string Description { get; set; }
 	public int Review { get; set; }
 }
-}
+

@@ -9,40 +9,28 @@
 	<script type="text/javascript" src="~/lib/fancybox/jquery.fancybox.js"></script>
 	<script type="text/javascript" src="~/js/hotel-details.js"></script>
 }
+@model cottages_asp.Models.Entities.Building
 <div class="gallery-container">
 	<div class="gallery">
-		<a data-fancybox="gallery" href="images/hotel1.jpg">
-			<img src="images/hotel1.jpg" alt="Hotel Front 1">
-		</a>
-		<a data-fancybox="gallery" href="images/hotel2.jpg">
-			<img src="images/hotel2.jpg" alt="Hotel Front 1">
-		</a>
-		<a data-fancybox="gallery" href="images/hotel3.jpg">
-			<img src="images/hotel3.jpg" alt="Hotel Front 1">
-		</a>
-		<a data-fancybox="gallery" href="images/hotel4.jpg">
-			<img src="images/hotel4.jpg" alt="Hotel Front 1">
-		</a>
-		<a data-fancybox="gallery" href="images/hotel5.jpg">
-			<img src="images/hotel5.jpg" alt="Hotel Front 1">
-		</a>
-		<a data-fancybox="gallery" href="images/hotel6.jpg">
-			<img src="images/hotel6.jpg" alt="Hotel Front 1">
-		</a>
-		<a class="hidden" data-fancybox="gallery" href="images/hotel6.jpg">
-			<img src="images/hotel6.jpg" alt="Hotel Front 1">
-		</a>
-		<a class="hidden" data-fancybox="gallery" href="images/hotel6.jpg">
-			<img src="images/hotel6.jpg" alt="Hotel Front 1">
-		</a>
-		<a class="hidden" data-fancybox="gallery" href="images/hotel6.jpg">
-			<img src="images/hotel6.jpg" alt="Hotel Front 1">
-		</a>
+		@for (int i = 0; i < 6; i++)
+		{
+			<a data-fancybox="gallery" href="@ViewBag.ImageUrls[i].ImageUrl">
+				<img src="@ViewBag.ImageUrls[i].ImageUrl" alt="Hotel Front 1">
+			</a>
+		}
+
+		@for (int i = 6; i < ViewBag.ImageUrls.Count; i++)
+		{
+			<a style="display: none;" data-fancybox="gallery" href="@ViewBag.ImageUrls[i].ImageUrl">
+				<img src="@ViewBag.ImageUrls[i].ImageUrl" alt="Hotel Front 1">
+			</a>
+		}
 	</div>
 </div>
 
+
 <div class="container">
-	<h1 class="mb-4">Grand Lux Cottage</h1>
+	<h1 class="mb-4">@Model.Name</h1>
 	<div class="row">
 		<div class="col-7">
 			<div class="content-section">
@@ -62,7 +50,7 @@
 					<div class="ms-2 flex-fill mb-1 col-3"><i class="fa-solid fa-shield"></i>&nbsp;Appliance 5</div>
 					<div class="ms-2 flex-fill mb-1 col-3"><i class="fa-solid fa-shield"></i>&nbsp;Appliance 5</div>
 				</div>
-				<div class="desc"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus mattis nunc ut lacus tincidunt porta. Morbi id magna ut ante semper hendrerit. Proin ullamcorper, leo a luctus lobortis, elit eros maximus odio, a aliquet purus purus id eros. Aliquam id nibh porta, tempus arcu ut, auctor mi. Nunc et enim blandit, varius magna sit amet, tincidunt augue. Nulla pellentesque magna vel ullamcorper mollis. Fusce magna leo, convallis sodales massa sed, venenatis vestibulum leo. Curabitur scelerisque egestas enim vel mollis. Fusce dictum lacus ut elit posuere auctor. Aliquam nec orci ornare, cursus dui at, luctus diam. Praesent tellus magna, scelerisque in arcu at, gravida vestibulum mi. Duis eros ipsum, scelerisque vitae lacinia et, tincidunt fringilla purus. Donec tincidunt convallis quam eget condimentum. Quisque hendrerit augue non aliquam placerat. Integer vestibulum malesuada metus, a posuere metus porta a. Nullam vitae bibendum augue, vel gravida nisi. </div>
+				<div class="desc">@Model.Description</div>
 			</div>
 		</div>
 		<div class="col-5">
@@ -88,4 +76,80 @@
 			</div>
 		</div>
 	</div>
+	<div class="row mt-4">
+    <div class="col-12">
+        <div class="offer-scroll-container" style="overflow-x: auto; white-space: nowrap;">
+            <div class="card d-inline-block m-2" style="width: 18rem;">
+                <div class="card-body">
+                    <h5 class="card-title">Bedroom 1</h5>
+                    <p class="card-text">
+                        <strong>Appliances:</strong> TV, Wi-Fi<br>
+                        <strong>Price:</strong> $200<br>
+                        <strong>Capacity:</strong> 2-4
+                    </p>
+                    <button type="button" class="btn btn-primary">Book Now</button>
+                </div>
+            </div>
+
+            <div class="card d-inline-block m-2" style="width: 18rem;">
+                <div class="card-body">
+                    <h5 class="card-title">Suite 2</h5>
+                    <p class="card-text">
+                        <strong>Appliances:</strong> Mini-bar, Air conditioning<br>
+                        <strong>Price:</strong> $300<br>
+                        <strong>Capacity:</strong> 4-6
+                    </p>
+                    <button type="button" class="btn btn-primary">Book Now</button>
+                </div>
+            </div>
+			            <div class="card d-inline-block m-2" style="width: 18rem;">
+                <div class="card-body">
+                    <h5 class="card-title">Bedroom 1</h5>
+                    <p class="card-text">
+                        <strong>Appliances:</strong> TV, Wi-Fi<br>
+                        <strong>Price:</strong> $200<br>
+                        <strong>Capacity:</strong> 2-4
+                    </p>
+                    <button type="button" class="btn btn-primary">Book Now</button>
+                </div>
+            </div>
+
+            <div class="card d-inline-block m-2" style="width: 18rem;">
+                <div class="card-body">
+                    <h5 class="card-title">Suite 2</h5>
+                    <p class="card-text">
+                        <strong>Appliances:</strong> Mini-bar, Air conditioning<br>
+                        <strong>Price:</strong> $300<br>
+                        <strong>Capacity:</strong> 4-6
+                    </p>
+                    <button type="button" class="btn btn-primary">Book Now</button>
+                </div>
+            </div>
+			            <div class="card d-inline-block m-2" style="width: 18rem;">
+                <div class="card-body">
+                    <h5 class="card-title">Bedroom 1</h5>
+                    <p class="card-text">
+                        <strong>Appliances:</strong> TV, Wi-Fi<br>
+                        <strong>Price:</strong> $200<br>
+                        <strong>Capacity:</strong> 2-4
+                    </p>
+                    <button type="button" class="btn btn-primary">Book Now</button>
+                </div>
+            </div>
+
+            <div class="card d-inline-block m-2" style="width: 18rem;">
+                <div class="card-body">
+                    <h5 class="card-title">Suite 2</h5>
+                    <p class="card-text">
+                        <strong>Appliances:</strong> Mini-bar, Air conditioning<br>
+                        <strong>Price:</strong> $300<br>
+                        <strong>Capacity:</strong> 4-6
+                    </p>
+                    <button type="button" class="btn btn-primary">Book Now</button>
+                </div>
+            </div>
+            <!-- Add more cards as needed -->
+        </div>
+    </div>
+</div>
 </div>

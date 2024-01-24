@@ -15,5 +15,6 @@ public class CottagesDbContext : IdentityDbContext<User, IdentityRole<Guid>, Gui
 	public DbSet<Extra> Extras => this.Set<Extra>();
 	public DbSet<Offer> Offers => this.Set<Offer>();
 	public DbSet<Room> Rooms => this.Set<Room>();
+	public DbSet<BuildingImages> BuildingImages => this.Set<BuildingImages>();
 }
 

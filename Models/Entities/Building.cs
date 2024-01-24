@@ -13,4 +13,5 @@ public class Building
 	public int Review { get; set; }
 	public ICollection<Offer> Offers { get; set; } = default!;
 	public ICollection<Category> Categories { get; set; } = default!;
+	public ICollection<BuildingImages> Images { get; set; } = new List<BuildingImages>();
 }

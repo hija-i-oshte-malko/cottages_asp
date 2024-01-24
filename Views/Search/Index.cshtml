@@ -1,7 +1,7 @@
 ﻿@{
 	int[] arr = new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17 };
 }
-@model List<cottages_asp.Models.Entities.Building>;
+@model List<cottages_asp.Models.BuildingViewModel>;
 <div class="container">
 	<div class="row gy-4">
 		@foreach (var i in Model)
@@ -23,7 +23,7 @@
 						</div>
 						<div class="review">@i.Description</div>
 						<div class="review ">Apr 2 - 8</div>
-						<div class="fatter-text">@i.Offers.Where(x=>x.BuildingId==i.Id).FirstOrDefault().Rooms.Where(x=>x.OfferId == i.Offers.Where(x=>x.BuildingId==i.Id).FirstOrDefault().Id).FirstOrDefault().Price; night</div>
+						<!--div class="fatter-text">@ViewBag.OfferOptionList night</div>-->
 					</div>
 				</div>
 			</div>

@@ -16,10 +16,19 @@ public class SearchController : Controller
 		_context = context;
 	}
 	[HttpGet]
-	public async Task<IActionResult> Index(BuildingViewModel buildingViewModel)
+	public async Task<IActionResult> Index()
 	{
 		List<Building> buildings = await _context.Buildings.ToListAsync();
+		List<BuildingViewModel> buildingsViewModel = buildings.Select(x => new BuildingViewModel()
+		{
+			Location = x.Location,
+			Name= x.Name,
+			Description= x.Description,
+			Review = x.Review
+		}).ToList();
 		ViewBag.OfferOptionList = new SelectList(_context.Offers, "Id", "Name");
-		return this.View();
+		return this.View(buildingsViewModel);
 	}
+
+	
 }

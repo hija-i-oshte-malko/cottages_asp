@@ -10,6 +10,4 @@ public class BuildingViewModel
 	public string Name { get; set; } = default!;
 	public string Description { get; set; } = default!;
 	public int Review { get; set; }
-	public ICollection<Offer> Offers { get; set; } = default!;
-	public ICollection<Category> Categories { get; set; } = default!;
 }

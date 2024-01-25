@@ -18,6 +18,7 @@ public class SearchController : Controller
 	[HttpGet]
 	public async Task<IActionResult> Index()
 	{
+
 		List<Building> buildings = await _context.Buildings.ToListAsync();
 		List<BuildingViewModel> buildingsViewModel = buildings.Select(x => new BuildingViewModel()
 		{

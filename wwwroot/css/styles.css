@@ -1,21 +1,22 @@
 html {
-  font-size: 14px;
+	font-size: 14px;
 }
 
 @media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
+	html {
+		font-size: 16px;
+	}
 }
 
 html {
-  position: relative;
-  min-height: 100%;
+	position: relative;
+	min-height: 100%;
 }
 
 body {
-  margin-bottom: 60px;
+	margin-bottom: 60px;
 }
+
 .fs-12 {
 	font-size: 12px;
 	text-align: right;
@@ -26,7 +27,7 @@ body {
 	margin: 0;
 	padding: 0;
 	position: relative;
-	overflow-x:hidden;
+	overflow-x: hidden;
 }
 
 .main-container {
@@ -43,4 +44,79 @@ body {
 
 .hidden {
 	display: none;
+}
+
+body {
+	height: 25vh;
+}
+
+.banner {
+	width: 100%;
+	min-height: 100vh;
+	background-color: black;
+	background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(/images/back.jpg);
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+.content {
+	width: 100%;
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	text-align: center;
+	color: white;
+}
+
+	.content h1 {
+		font-size: 70px;
+		margin-top: 80px;
+	}
+
+	.content p {
+		margin: 20px auto;
+		font-weight: 100;
+		line-height: 25px;
+	}
+
+.home-btn {
+	width: 200px;
+	padding: 15px 0;
+	text-align: center;
+	margin: 20px 10px;
+	border-radius: 25px;
+	font-weight: bold;
+	border: 1px solid #fff;
+	background: transparent;
+	color: #fff;
+	cursor: pointer;
+	position: relative;
+	overflow: hidden;
+}
+
+.home-btn-anim {
+	background-color: #FFFFFF;
+	height: 100%;
+	width: 0;
+	border-radius: 25px;
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	z-index: -1;
+	transition: 0.5s;
+}
+
+.home-btn:hover {
+	color: #152637;
+	border: none;
+	transition: 0.5s ease-in-out;
+}
+.home-btn {
+	color: #FFFFFF;
+	transition: 0.5s;
+}
+
+.home-btn:hover .home-btn-anim {
+	width: 100%;
 }
